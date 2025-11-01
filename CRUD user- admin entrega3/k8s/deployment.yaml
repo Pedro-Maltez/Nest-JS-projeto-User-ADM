@@ -1,0 +1,20 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-clean-arch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-clean-arch
+  template:
+    metadata:
+      labels:
+        app: hello-clean-arch
+    spec:
+      containers:
+      - name: hello
+        image: hello-clean-arch:latest
+        ports:
+        - containerPort: 3000
